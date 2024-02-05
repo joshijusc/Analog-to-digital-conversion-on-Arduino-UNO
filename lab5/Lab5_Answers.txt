@@ -1,0 +1,41 @@
+			     EE 109 - Spring 2023
+		     Lab 5 - Analog to Digital Conversion
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+
+1. (1 point) To ensure a date appears in the format: MM/DD, what snprintf()
+formatting string could be used to ensure dates like 6/9 are generated in a
+character buffer as 06/09.
+
+	char buf[17];
+	int m = 6; d = 9;
+	snprintf(buf, 17, /* you write the format string */, m, d);
+
+"%02d/%02d" 
+
+
+
+
+
+
+1. (3 points) Review the conceptual operation of an ADC and use the given
+parameters to find the desired value.
+
+  a. Your 8-bit ADC has Hi and Lo reference voltages of 1V and 4V, what digital
+  number would result from sampling a 2.0V?
+255/3 = 85
+
+  b. Your 5-bit ADC has Hi and Lo reference voltages of 0V and 5V, what input
+  voltage would yield a digital number of 12?
+(12*5)/31 = 2
+
+
+  c.  Your 6-bit ADC has a Lo reference voltages of 2V. A voltage is sampled at
+  2.4V and the digital result is 26. What was the Hi reference voltage used by
+  the ADC?
+((0.4*63)/26)+2 = 3V
+
+
+
